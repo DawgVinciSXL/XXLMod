@@ -19,6 +19,7 @@ namespace XXLMod
 
         public static UIController UIController;
         public static XXLController XXLController;
+        public static FlipController FlipController;
 
         public static bool enabled;
 
@@ -63,11 +64,13 @@ namespace XXLMod
 
                 XXLController = new GameObject().AddComponent<XXLController>();
                 UIController = new GameObject().AddComponent<UIController>();
+                FlipController = new GameObject().AddComponent<FlipController>();
             }
             else
             {
                 HarmonyInstance.UnpatchAll(HarmonyInstance.Id);
 
+                UnityEngine.Object.Destroy(FlipController);
                 UnityEngine.Object.Destroy(UIController);
                 UnityEngine.Object.Destroy(XXLController);
 

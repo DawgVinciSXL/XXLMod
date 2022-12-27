@@ -65,6 +65,9 @@ namespace XXLMod.Controller
                     case MenuTab.General:
                         TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 664f)), GeneralUI.Window, $"<b>{Title}</b>");
                         break;
+                    case MenuTab.Flips:
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(495f, Main.Settings.FlipSettings.FlipMode == FlipMode.Expert ? 508f : 400f)), FlipUI.Window, $"<b>{Title}</b>");
+                        break;
                 }
             }
         }
@@ -77,6 +80,11 @@ namespace XXLMod.Controller
             if (GUILayout.Button("<b>GENERAL/POP</b>", GUILayout.Height(21f)))
             {
                 MenuTab = (MenuTab == MenuTab.General) ? MenuTab.Off : MenuTab.General;
+            }
+
+            if (GUILayout.Button("<b>FLIPS</b>", GUILayout.Height(21f)))
+            {
+                MenuTab = (MenuTab == MenuTab.Flips) ? MenuTab.Off : MenuTab.Flips;
             }
         }
 

@@ -7,12 +7,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using XXLMod.Data.Enums;
 
 namespace XXLMod.Controller
 {
     public class XXLController : MonoBehaviour
     {
         public static XXLController Instance { get; private set; }
+
+        public static XXLPopType PopType;
 
         private void Awake() => Instance = this;
 
