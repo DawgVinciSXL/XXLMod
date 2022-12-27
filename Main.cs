@@ -4,17 +4,21 @@ using System;
 using System.Reflection;
 using UnityEngine;
 using UnityModManagerNet;
+using XXLMod.Controller;
 
 namespace XXLMod
 {
     public class Main
     {
-        public static string Version = "";
+        public static string Version = "1.0.0";
 
         public static Harmony HarmonyInstance;
-        public static UnityModManager.ModEntry.ModLogger Logger;
         public static Settings Settings;
+        public static UnityModManager.ModEntry.ModLogger Logger;
         public static UnityModManager.ModEntry modEntry;
+
+        public static UIController UIController;
+        public static XXLController XXLController;
 
         public static bool enabled;
 
@@ -57,10 +61,16 @@ namespace XXLMod
                 HarmonyInstance = new Harmony(modEntry.Info.Id);
                 HarmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
 
+                XXLController = new GameObject().AddComponent<XXLController>();
+                UIController = new GameObject().AddComponent<UIController>();
             }
             else
             {
                 HarmonyInstance.UnpatchAll(HarmonyInstance.Id);
+
+                UnityEngine.Object.Destroy(UIController);
+                UnityEngine.Object.Destroy(XXLController);
+
                 ResetToDefault();
             }
             return true;
