@@ -10,7 +10,7 @@ namespace XXLMod.Patches.PlayerState_Released_
         {
             if (____caught || ____bothCaught || ____caughtLeft || ____caughtRight)
             {
-                FlipController.Instance.FlipDetected = false;
+                FlipController.Instance.ResetDetected();
             }
         }
     }

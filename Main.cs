@@ -35,6 +35,11 @@ namespace XXLMod
 
         private static void OnGUI(UnityModManager.ModEntry modEntry)
         {
+            if (RGUI.Button(Settings.Debugging, "Debugging"))
+            {
+                Settings.Debugging = !Settings.Debugging;
+            }
+
             GUILayout.Box("<b>Background Color</b>", GUILayout.Height(21f));
             Settings.BGColor.r = RGUI.SliderFloat(Settings.BGColor.r, 0f, 1f, 0f, "Red");
             Settings.BGColor.g = RGUI.SliderFloat(Settings.BGColor.g, 0f, 1f, 0f, "Green");

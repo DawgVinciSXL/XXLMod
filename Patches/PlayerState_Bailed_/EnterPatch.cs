@@ -8,7 +8,7 @@ namespace XXLMod.Patches.PlayerState_Bailed_
     {
         static void Prefix()
         {
-            FlipController.Instance.FlipDetected = false;
+            FlipController.Instance.ResetDetected();
         }
     }
 }

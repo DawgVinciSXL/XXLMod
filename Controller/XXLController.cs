@@ -25,7 +25,6 @@ namespace XXLMod.Controller
 
         private void Update()
         {
-
         }
 
         private void LateUpdate()

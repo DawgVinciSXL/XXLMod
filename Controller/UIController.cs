@@ -70,6 +70,12 @@ namespace XXLMod.Controller
                         break;
                 }
             }
+
+            if (DebuggingUI.showMenu)
+            {
+                GUI.backgroundColor = Main.Settings.BGColor;
+                DebuggingUI.rect = GUILayout.Window(9002, DebuggingUI.rect, DebuggingUI.Window, $"<b>{Title}</b>");
+            }
         }
 
         private void MainMenu(int windowID)
@@ -85,6 +91,18 @@ namespace XXLMod.Controller
             if (GUILayout.Button("<b>FLIPS</b>", GUILayout.Height(21f)))
             {
                 MenuTab = (MenuTab == MenuTab.Flips) ? MenuTab.Off : MenuTab.Flips;
+            }
+
+            if (Main.Settings.Debugging)
+            {
+                if (GUILayout.Button("<b>DEBUG</b>", GUILayout.Height(21f)))
+                {
+                    DebuggingUI.showMenu = !DebuggingUI.showMenu;
+                }
+            }
+            else
+            {
+                GUILayout.Box("", GUILayout.Height(21f));
             }
         }
 

@@ -114,11 +114,14 @@
     <Compile Include="Patches\BoardController_\RotatePatch.cs" />
     <Compile Include="Patches\BoardController_\SetBoardControlPositionPatch.cs" />
     <Compile Include="Patches\PlayerState_Bailed_\EnterPatch.cs" />
+    <Compile Include="Patches\PlayerState_BeginPop_\EnterPatch.cs" />
     <Compile Include="Patches\PlayerState_BeginPop_\UpdatePatch.cs" />
+    <Compile Include="Patches\PlayerState_Pop_\EnterPatch.cs" />
     <Compile Include="Patches\PlayerState_Pop_\UpdatePatch.cs" />
     <Compile Include="Patches\PlayerState_Released_\UpdatePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="UI\DebuggingUI.cs" />
     <Compile Include="UI\FlipUI.cs" />
     <Compile Include="UI\GeneralUI.cs" />
   </ItemGroup>

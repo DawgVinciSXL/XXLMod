@@ -15,12 +15,26 @@ namespace XXLMod.Controller
         public bool IsBsShuv;
         public bool IsFsShuv;
 
+        public bool IsFlipping()
+        {
+            return IsKickflip || IsHeelflip;
+        }
+
         public bool IsScooping()
         {
             return IsBsShuv || IsFsShuv;
         }
 
         private void Awake() => Instance = this;
+
+        public void ResetDetected()
+        {
+            FlipDetected = false;
+            IsKickflip = false;
+            IsHeelflip = false;
+            IsBsShuv = false;
+            IsFsShuv = false;
+        }
 
         public void VerticalScoop()
         {
