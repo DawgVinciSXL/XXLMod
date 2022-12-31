@@ -16,6 +16,7 @@ namespace XXLMod
         public Color BGColor = new Color(0f, 0f, 0f);
 
         public GeneralSettings GeneralSettings = new GeneralSettings();
+        public CatchSettings CatchSettings = new CatchSettings();
         public FlipSettings FlipSettings = new FlipSettings();
 
         public void OnChange()

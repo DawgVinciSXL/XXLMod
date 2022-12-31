@@ -9,6 +9,7 @@ namespace XXLMod.Patches.PlayerState_Bailed_
         static void Prefix()
         {
             FlipController.Instance.ResetDetected();
+            XXLController.Instance.ResetAdvancedPop();
         }
     }
 }

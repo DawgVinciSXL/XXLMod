@@ -38,6 +38,7 @@ namespace XXLMod.Patches.PlayerState_BeginPop_
                 XXLController.PopType = XXLPopType.Switch;
             }
 
+            FlipController.Instance.PressureFlip();
             FlipController.Instance.VerticalScoop();
         }
     }
